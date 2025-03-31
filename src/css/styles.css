@@ -116,7 +116,7 @@ img {
   margin: 0 auto;
 }
 .photo-card {
-  width: 280px;
+  width: 100%;
 }
 .photo-card img {
   width: 100%;
