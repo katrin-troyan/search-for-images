@@ -3,11 +3,33 @@
 }
 
 body {
-  background-color: #ffffff;
-  color: #212121;
   font-family: 'Montserrat', sans-serif;
+  color: #212121;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(7, 7, 7, 0.4), rgba(17, 17, 17, 0.4)),
+    url('/background_small_mobile-min.jpg');
 }
-
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)
+      ),
+      url('/background_tablet-min.jpg');
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body {
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)
+      ),
+      url('/background_desktop-min.jpg');
+  }
+}
 ul,
 ol {
   margin: 0;
@@ -25,43 +47,57 @@ img {
 }
 
 .container {
-  max-width: 1440px;
-  padding: 36px 156px;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 736px;
+    padding: 0 16px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
 }
 #search-form {
   display: flex;
   flex-direction: row;
   gap: 8px;
   justify-content: center;
+  margin-top: 100px;
 }
 .form-input {
   width: 272px;
   height: 40px;
-  border-radius: 4px;
-  border: 1px solid #808080;
-  margin-bottom: 32px;
+  border-radius: 8px;
+  border: 1px solid #c9e9c8;
+  margin-bottom: 60px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #2e2f42;
-  padding: 8px 16px;
+  padding: 0 16px;
 }
 .form-input:hover {
-  border: 1px solid #000000;
+  border: 1px solid #025c11;
 }
 .form-input:focus {
-  border: 1px solid #4e75ff;
+  border: 1px solid #025c11;
   outline: none;
 }
 
 .btn-form {
   border-radius: 8px;
-  border: 1px solid #4e75ff;
-  width: 75px;
+  border: 1px solid #025c11;
+  width: 100px;
   height: 40px;
-  background: #4e75ff;
+  background: #025c11;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -70,44 +106,47 @@ img {
   cursor: pointer;
 }
 .btn-form:hover {
-  border: 1px solid #6c8cff;
-  background: #6c8cff;
+  border: 1px solid #038018;
+  background: #038018;
 }
 .gallery {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 24px;
 }
 .photo-card {
-  width: 360px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #808080;
-}
-.photo-card img {
+  width: 280px;
   height: 200px;
-  object-fit: cover;
-}
-.info {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  text-align: center;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 2;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
 }
 
-.info p {
-  margin: 0px;
+@media only screen and (min-width: 768px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .photo-card {
+    width: 340px;
+  }
+  .photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
 }
+@media only screen and (min-width: 1280px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .photo-card {
+    width: 400px;
+  }
+}
+
 .loader {
   display: none;
   border: 8px solid #f3f3f3;
-  border-top: 8px solid #3498db;
+  border-top: 8px solid #038018;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -135,8 +174,8 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #fff;
-  background-color: #4e75ff;
-  border: 1px solid #4e75ff;
+  background-color: #025c11;
+  border: 1px solid #025c11;
   border-radius: 8px;
   width: 125px;
   height: 40px;

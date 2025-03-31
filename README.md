@@ -1,1 +1,1 @@
-Цей проект було створено за допомогою Vite.
+Seek and you shall find
