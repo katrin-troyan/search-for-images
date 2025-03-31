@@ -113,7 +113,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  align-items: center;
+  margin: 0 auto;
 }
 .photo-card {
   width: 280px;
